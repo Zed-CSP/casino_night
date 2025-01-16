@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import FallingCoins from '@/components/effects/FallingCoins'
+import NightSky from '@/components/effects/NightSky'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+      <section className="h-screen flex items-center justify-center bg-gradient-to-b from-black/50 to-gray-900/50 relative overflow-hidden">
         {/* Animated coins background */}
+        <NightSky />
         <FallingCoins />
         
         <div className="text-center z-10 px-4">

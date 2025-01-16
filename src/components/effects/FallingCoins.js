@@ -6,7 +6,8 @@ export default function FallingCoins() {
     const chipColors = [
         { main: '#e61e25', dark: '#d11920', border: 'white' },  // Red
         { main: '#1a1a1a', dark: '#000000', border: 'white' },  // Black
-        { main: '#ffffff', dark: '#e0e0e0', border: '#e0e0e0' }   // White
+        { main: '#ffffff', dark: '#e0e0e0', border: '#e0e0e0' },  // White
+        { main: '#15803d', dark: '#166534', border: 'white' }   // Darker Green (using green-700 and green-800)
     ]
 
     useEffect(() => {
@@ -50,9 +51,10 @@ export default function FallingCoins() {
             }, parseFloat(coin.style.animationDuration) * 1000)
         }
 
+        // Create coins periodically
         const interval = setInterval(createCoin, 300)
         return () => clearInterval(interval)
     }, [])
 
-    return <div id="coin-container" className={styles.container} />
+  return <div id="coin-container" className={styles.container} />
 }
