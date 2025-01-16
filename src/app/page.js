@@ -1,23 +1,35 @@
 import Link from 'next/link'
+import FallingCoins from '@/components/effects/FallingCoins'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900">
-        <div className="text-center">
-          <h1 className="text-6xl font-bold text-green-500 mb-6">
+      <section className="h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+        {/* Animated coins background */}
+        <FallingCoins />
+        
+        <div className="text-center z-10 px-4">
+          <h1 className="text-6xl md:text-7xl font-bold text-green-500 mb-6 animate-fade-in">
             Welcome to Casino Night!
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Experience the thrill of casino games from the comfort of your home
           </p>
-          <Link 
-            href="/games" 
-            className="bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-8 rounded-full text-lg"
-          >
-            Start Playing
-          </Link>
+          <div className="space-x-4">
+            <Link 
+              href="/games" 
+              className="bg-green-500 hover:bg-green-600 text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:scale-105"
+            >
+              Start Playing
+            </Link>
+            <Link 
+              href="/about" 
+              className="border border-green-500 text-green-500 hover:bg-green-500/10 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
       </section>
 
